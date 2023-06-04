@@ -1,12 +1,17 @@
 /* Header.css */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-  }
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to left, #333 25%, transparent);
+  color: #fff;
+  padding: 1rem;
+}
+
+
   
   .logo-container {
     display: flex;

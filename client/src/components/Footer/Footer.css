@@ -1,0 +1,46 @@
+/* Footer.css */
+@import '~bulma/css/bulma.min.css';
+  
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgb(255, 255, 255);
+  padding: 10px 0 0 0;
+  position: relative;
+  bottom: 0;
+  margin-top: clamp(100px, calc(30vh + 10px), 900px);
+  width: auto;
+  min-width: min-content;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  margin-bottom: 1.5rem;
+}
+
+.footer-heading {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.75rem;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.footer-license {
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    flex: 1 1 100%;
+  }
+}
