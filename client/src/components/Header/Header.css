@@ -1,0 +1,78 @@
+/* Header.css */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    min-height: 50px;  
+    max-width: 200px;
+    margin-right: 1rem;
+  }
+  
+  .mobile-nav-toggle {
+    display: none;
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .mobile-nav-toggle:hover {
+    color: #bada55;
+  }
+  
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+
+    .nav-list li {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-list li:hover {
+        box-shadow: inset 0 -2px 0 0 #fff;
+    }
+
+  .nav-list a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px; /* increase clickable area */
+  }
+
+  
+  .nav-list a.active {
+    border-bottom: 2px solid #fff; /* highlight active page */
+  }
+  
+  @media (max-width: 768px) {
+    .mobile-nav-toggle {
+      display: block;
+    }
+  
+    .nav-list {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: max-height 0.3s ease-in-out; /* animate transition */
+    }
+  
+    .nav-list.mobile-nav-open {
+      display: flex;
+    }
+  }
+  
