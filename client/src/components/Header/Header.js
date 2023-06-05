@@ -23,21 +23,6 @@ const Header = () => {
           <a href="http://www.kulturaihistoria.umcs.lublin.pl/en/">Home</a>
         </li>
         <li>
-          <a href="http://www.kulturaihistoria.umcs.lublin.pl/pl/redakcja">
-            Editors
-          </a>
-        </li>
-        <li>
-          <a href="http://www.kulturaihistoria.umcs.lublin.pl/pl/rada-naukowa">
-            Advisory Board
-          </a>
-        </li>
-        <li>
-          <a href="http://www.kulturaihistoria.umcs.lublin.pl/pl/kontakt">
-            Contact
-          </a>
-        </li>
-        <li>
           <a href="http://www.kulturaihistoria.umcs.lublin.pl/pl/kultura-i-histora-nr-42-2022-2">
             Latest Issue
           </a>
