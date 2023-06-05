@@ -6,12 +6,13 @@ import AuthorGuidelinesPage from './components/AuthorGuidelinesPage/AuthorGuidel
 import ContactPage from './components/ContactPage/ContactPage';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Header />
+      <Header />
+      <div className="App"> 
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -20,8 +21,8 @@ function App() {
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
-        <Footer />
       </div>
+      <Footer />
     </Router>
   );
 }
