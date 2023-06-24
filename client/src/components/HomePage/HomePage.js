@@ -1,41 +1,73 @@
-import React, { useState } from 'react';
-import { Card, Content } from 'react-bulma-components';
-import './HomePage.css';
+import React from "react";
+import { Tab, Tabs, Card, Container, Row, Col } from "react-bootstrap";
 
 const HomePage = () => {
-  const [isCardOpen, setIsCardOpen] = useState([false, false, false]);
+  const aboutJournal = [
+    {
+      title: "Aims and Scope",
+      content: "Kultura i Historia is an interdisciplinary journal...",
+    },
+    {
+      title: "Open Access Policy",
+      content: "Kultura i Historia provides free and open access...",
+    },
+    {
+      title: "Ethical Standards",
+      content: "The editorial staff of the journal follows the guidelines...",
+    },
+    {
+      title: "Data Privacy Policy / GDPR",
+      content: "Please note that all personal data...",
+    },
+  ];
 
-  const toggleCard = (index) => {
-    const newIsCardOpen = [...isCardOpen];
-    newIsCardOpen[index] = !newIsCardOpen[index];
-    setIsCardOpen(newIsCardOpen);
-  };
-
-  const cardInfo = [
-    { title: 'Aims and Scope', content: 'Kultura i Historia is an interdisciplinary journal devoted to subject matter in the humanities, aimed at addressing historical and cultural problems, while also touching on contemporary questions in the areas of cyberculture, transhumanism, or philosophy. Research topics are primarily focused on the history and culture of Central and Eastern Europe. The journal publishes scholarly articles containing theoretical, methodological and empirical research results. While the journal is addressed to academic researchers in particular, its audience is likely to include a broader scope of people interested in learning about the cultural and historical aspects of the world. The scholarly journal Kultura i Historia is published by the Institute of Cultural Studies of the Maria Curie-Skłodowska University in Lublin.' },
-    { title: 'Open Access Policy', content: 'Kultura i Historia provides free and open access to its published works ( under the terms of the Creative Commons license). This policy stems from the principle that sharing research findings with a broad and diverse audience facilitates an unhindered and unimpeded exchange of knowledge.' },
-    { title: 'Ethical Standards', content: 'The editorial staff of the journal follows the guidelines of the Committee on Publication Ethics. We are committed to ensuring that the publication process is conducted in accordance with the highest ethical standards. If unethical behavior is discovered, such as plagiarism, forgery of data, republication of a previously published manuscript or parts thereof, ghostwriting and guest authorship, the Editorial Board will ask the author for clarification and will take appropriate steps as foreseen in such situations, which may result in the dismissal of the article and refusal to publish it.' },
-    { title: 'Data Privacy Policy / General Data Protection Regulation (GDPR)', content: 'Please note that all personal data, including contact details, provided to the Editorial Office are used only for the day-to-day operation of the journal and for maintaining correspondence with contributors. This information is not shared with any other parties.' },
-    { title: 'Editorial Board', content: ""},
-    { title: 'Advisory Board', content: ""},
-    { title: 'Reviewers', content: ""}
+  const people = [
+    { title: "Editorial Board", content: "" },
+    { title: "Advisory Board", content: "" },
+    { title: "Reviewers", content: "" },
   ];
 
   return (
-    <div className="home-page">
-      {cardInfo.map((info, index) => (
-        <Card key={index} onClick={() => toggleCard(index)}>
-          <Card.Header>
-            <Card.Header.Title>{info.title}</Card.Header.Title>
-          </Card.Header>
-          {isCardOpen[index] && (
-            <Card.Content>
-              <Content>{info.content}</Content>
-            </Card.Content>
-          )}
-        </Card>
-      ))}
-    </div>
+    <Container>
+      <Tabs
+        defaultActiveKey="aboutJournal"
+        id="uncontrolled-tab-example"
+        className="mb-3"
+        fill
+        justify
+        transition
+      >
+        <Tab eventKey="aboutJournal" title="About the Journal">
+          <Row xs={1} md={2} className="g-4">
+            {aboutJournal.map((info, index) => (
+              <Col sm={6} md={4} lg={3} key={index}>
+                <Card>
+                  <Card.Header>
+                    <Card.Title>{info.title}</Card.Title></Card.Header>
+                  <Card.Body>
+                    <Card.Text>{info.content}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Tab>
+        <Tab eventKey="people" title="People">
+          <Row xs={1} md={2} className="g-4">
+            {people.map((info, index) => (
+              <Col sm={6} md={4} lg={3} key={index}>
+                <Card>
+                  <Card.Header><Card.Title>{info.title}</Card.Title></Card.Header>
+                  <Card.Body>
+                    <Card.Text>{info.content}</Card.Text>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Tab>
+      </Tabs>
+    </Container>
   );
 };
 
