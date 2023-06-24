@@ -10,6 +10,9 @@ const Footer = () => {
           <div className="footer-heading">
             Kultura i Historia | ISSN 1642-9826
           </div>
+          <div>
+            
+          </div>
           <div class="table-container">
             <table class="footer-text">
               <thead>
