@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/kih-v2-react-bootstrap/static/css/main.651c77ce.css",
+    "main.js": "/kih-v2-react-bootstrap/static/js/main.c8a93fec.js",
+    "static/media/logo.svg": "/kih-v2-react-bootstrap/static/media/logo.1762b650b817165fb1f966fa920f829a.svg",
+    "index.html": "/kih-v2-react-bootstrap/index.html",
+    "static/media/logo_dark.svg": "/kih-v2-react-bootstrap/static/media/logo_dark.bd6fdfb28f4b6399dcd213a9820dd742.svg",
+    "main.651c77ce.css.map": "/kih-v2-react-bootstrap/static/css/main.651c77ce.css.map",
+    "main.c8a93fec.js.map": "/kih-v2-react-bootstrap/static/js/main.c8a93fec.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.651c77ce.css",
+    "static/js/main.c8a93fec.js"
+  ]
+}
