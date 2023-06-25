@@ -8,10 +8,10 @@ import {
   Col,
   ListGroup,
 } from "react-bootstrap";
-import { ThemeContext } from "../ThemeContext/ThemeContext";
+import { ThemeContext } from "../ThemeContext";
 
-import journal_data from "../../content/index";
-import aboutJournal from "../../content/about";
+import journal_data from "../_content";
+import aboutJournal from "../_content/about";
 
 const PersonCard = ({ title, people }) => {
   const { darkMode } = useContext(ThemeContext);

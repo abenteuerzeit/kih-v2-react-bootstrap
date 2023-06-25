@@ -4,10 +4,10 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
-import logo from "./img/logo.svg";
-import logo_dark from "./img/logo_dark.svg";
+import logo from "../_content/logo.svg";
+import logo_dark from "../_content/logo_dark.svg";
 import { BsMoon, BsSun } from "react-icons/bs";
-import { ThemeContext } from "../ThemeContext/ThemeContext";
+import { ThemeContext } from "../ThemeContext";
 
 function Header() {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);

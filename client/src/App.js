@@ -6,7 +6,7 @@ import AuthorGuidelinesPage from './components/AuthorGuidelinesPage';
 import ContactPage from './components/ContactPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { ThemeContext } from './components/ThemeContext/ThemeContext';
+import { ThemeContext } from './components/ThemeContext';
 import './App.css';
 
 function App() {

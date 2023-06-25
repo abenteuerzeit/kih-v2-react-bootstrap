@@ -3,8 +3,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Image from "react-bootstrap/Image";
 
-import journal_data from "../../content/index";
-import { ThemeContext } from "../ThemeContext/ThemeContext";
+import journal_data from "../_content";
+import { ThemeContext } from "../ThemeContext";
 import "./style.css";
 
 const Footer = () => {
