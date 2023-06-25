@@ -1,10 +1,10 @@
-import { combineReducers } from '@reduxjs/toolkit';
-import articlesReducer from './articles';
-import authorsReducer from './authors';
+// import { combineReducers } from '@reduxjs/toolkit';
+// import articlesReducer from './articles';
+// import authorsReducer from './authors';
 
-const rootReducer = combineReducers({
-  articles: articlesReducer,
-  authors: authorsReducer,
-});
+// const rootReducer = combineReducers({
+//   articles: articlesReducer,
+//   authors: authorsReducer,
+// });
 
-export default rootReducer;
+// export default rootReducer;

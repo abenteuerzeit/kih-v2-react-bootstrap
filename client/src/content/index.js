@@ -39,7 +39,7 @@ const journal_data = {
     text: "Attribution-NonCommercial 4.0 International",
     logo_design: "Sebastian Zonik, M.A.",
   },
-  patronage: "the Lublin Branch of the Polish Sightseeing Society (PTK)",
+  patronage: "The Lublin Branch of the Polish Sightseeing Society (PTK)",
   past_editors: {
     issues_1_9: "Krzysztof Karauda",
     issues_10_29: "Radosław Bomba",

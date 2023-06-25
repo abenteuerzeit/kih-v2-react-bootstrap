@@ -1,25 +1,21 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-// import NavDropdown from "react-bootstrap/NavDropdown";
+import Tooltip from "react-bootstrap/Tooltip";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import logo from "./img/logo.svg";
 import { BsMoon, BsSun } from "react-icons/bs";
+import { ThemeContext } from "../ThemeContext/ThemeContext";
 
 function Header() {
-  const [darkMode, setDarkMode] = useState(false);
+  const { darkMode, toggleDarkMode } = useContext(ThemeContext);
 
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.setAttribute("data-bs-theme", "dark");
-    } else {
-      document.documentElement.setAttribute("data-bs-theme", "light");
-    }
-  }, [darkMode]);
-
-  const handleDarkModeToggle = () => {
-    setDarkMode(!darkMode);
-  };
+  const renderTooltip = (props) => (
+    <Tooltip id="button-tooltip" {...props}>
+      Toggle {darkMode ? "Light" : "Dark"} Mode
+    </Tooltip>
+  );
 
   return (
     <Navbar expand="lg" className={darkMode ? "bg-dark" : "bg-light"}>
@@ -50,9 +46,15 @@ function Header() {
             </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link onClick={handleDarkModeToggle}>
-              {darkMode ? <BsSun /> : <BsMoon />}
-            </Nav.Link>
+            <OverlayTrigger
+              placement="bottom"
+              delay={{ show: 250, hide: 400 }}
+              overlay={renderTooltip}
+            >
+              <Nav.Link onClick={toggleDarkMode}>
+                {darkMode ? <BsSun /> : <BsMoon />}
+              </Nav.Link>
+            </OverlayTrigger>
           </Nav>
         </Navbar.Collapse>
       </Container>

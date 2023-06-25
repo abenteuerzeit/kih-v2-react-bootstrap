@@ -58,7 +58,7 @@ const editors = {
       },
       {
         orcid: "0000-0001-6813-7490",
-        display_name: "abenteuerzeit",
+        display_name: "Adrian Mróz",
         first_name: "Adrian",
         last_name: "Mróz",
         title: "PhD",
