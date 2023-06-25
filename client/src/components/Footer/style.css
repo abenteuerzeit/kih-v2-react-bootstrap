@@ -1,10 +1,9 @@
 .footer-dark {
     background-color: #1d1d1d;
-    color: #fff;
+    color: snow !important;
   }
   
   .footer-light {
-    background-color: #fff;
-    color: #1d1d1d;
+    background-color: snow;
+    color: #1d1d1d !important;
   }
-  

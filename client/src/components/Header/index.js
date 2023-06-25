@@ -1,10 +1,11 @@
-import { useState, useEffect, useContext } from "react";
+import {  useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import logo from "./img/logo.svg";
+import logo_dark from "./img/logo_dark.svg";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { ThemeContext } from "../ThemeContext/ThemeContext";
 
@@ -22,7 +23,7 @@ function Header() {
       <Container fluid>
         <Navbar.Brand href="http://www.kulturaihistoria.umcs.lublin.pl/en/">
           <img
-            src={logo}
+            src={darkMode ? logo_dark : logo}
             alt="Kultura i Historia logo"
             width="30"
             height="30"

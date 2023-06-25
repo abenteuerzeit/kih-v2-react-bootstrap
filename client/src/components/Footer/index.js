@@ -9,15 +9,15 @@ import "./style.css";
 
 const Footer = () => {
   const { darkMode } = useContext(ThemeContext);
+
   const { name, issn, classification, office, copyright, patronage } =
     journal_data;
 
-  // Use the darkMode value to set the class of the footer
   const footerClass = darkMode ? "footer-dark" : "footer-light";
 
   return (
-    <footer className={`${footerClass} footer pt-5 pb-4`}>
-      <Container>
+    <footer>
+      <Container className={`${footerClass}`}>
         <Row>
           <Col md={6}>
             <h5 className="mb-3">{`${name} | ISSN ${issn}`}</h5>
