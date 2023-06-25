@@ -32,7 +32,8 @@ const Footer = () => {
                 to={`mailto:${journal_data.editorial_board[0].emails[0]}`}
                 className="footer-link"
               >
-                {journal_data.editorial_board[0].name}
+                {journal_data.editorial_board[0].title}{" "}
+                {journal_data.editorial_board[0].display_name}
               </Link>
               <br />
               ORCID:{" "}

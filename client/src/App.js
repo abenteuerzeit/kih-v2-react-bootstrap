@@ -4,6 +4,7 @@ import HomePage from './components/HomePage';
 import ArticlePage from './components/ArticlePage';
 import AuthorGuidelinesPage from './components/AuthorGuidelinesPage';
 import ContactPage from './components/ContactPage';
+import ArchivesPage from './components/ArchivesPage'; // import ArchivesPage
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { ThemeContext } from './components/ThemeContext';
@@ -37,6 +38,7 @@ function App() {
               <Route path="/articles" element={<ArticlePage />} />
               <Route path="/author-guidelines" element={<AuthorGuidelinesPage />} />
               <Route path="/contact" element={<ContactPage />} />
+              <Route path="/archives" element={<ArchivesPage />} />
             </Routes>
           </main>
         </div>

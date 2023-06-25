@@ -1,9 +1,42 @@
 @import '~bulma/css/bulma.min.css';
 
+
+
+:root,
+[data-bs-color-scheme="light"] {
+  --bs-primary: #521611;
+  /* --caput_mortuum */
+  --bs-secondary: #1e0f0d;
+  /* --licorice */
+  --bs-success: #7d010a;
+  /* --maroon */
+  --bs-danger: #e50d0e;
+  /* --red */
+  --bs-warning: #f4d604;
+  /* --school_bus_yellow */
+  --bs-info: #00a8df;
+  /* --picton_blue */
+  --bs-light: #feedc4;
+  /* --dutch_white */
+  --bs-dark: #1D093D;
+  /* --russian_violet */
+  --bs-white: #f5f5f5;
+  /* --white_smoke */
+  --bs-claret: #6A1C2E;
+  /* --claret */
+  --bs-gray-dark: #BA6113;
+  /* --alloy_orange */
+  --bs-sandy_brown: #FAA84D;
+  /* --sandy_brown */
+
+}
+
+
 * {
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,6 +44,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--);
 }
 
 code {
@@ -24,4 +58,8 @@ main {
 
 h5 {
   margin-top: 20px;
+}
+
+a {
+  color: var(--bs-info);
 }

@@ -9,46 +9,46 @@ import {
   ListGroup,
 } from "react-bootstrap";
 import { ThemeContext } from "../ThemeContext";
+import News from "../News";
 
 import journal_data from "../_content";
 import aboutJournal from "../_content/about";
-
 const PersonCard = ({ title, people }) => {
   const { darkMode } = useContext(ThemeContext);
 
-  
-
   return (
-    <Col sm={6} md={8} lg={6}>
-      <Card
-        className="h-100"
-        bg={darkMode ? "dark" : "light"}
-        text={darkMode ? "white" : "dark"}
-      >
-        <Card.Header>
-          <Card.Title>{title}</Card.Title>
-        </Card.Header>
-        <Card.Body className="d-flex flex-column">
-          {people.map((person, index) => (
-            <div key={index} className="mb-2">
-              <Card.Title>{person.display_name || person.name}</Card.Title>
-              {person.title && (
-                <Card.Subtitle className="mb-2 text-muted">
-                  {person.title}
-                </Card.Subtitle>
-              )}
-              {person.role && <Card.Text>{person.role}</Card.Text>}
-              {person.emails &&
-                person.emails.map((email, index) => (
-                  <Card.Link key={index} href={`mailto:${email}`}>
-                    {email}
-                  </Card.Link>
-                ))}
-            </div>
-          ))}
-        </Card.Body>
-      </Card>
-    </Col>
+    <>
+      <Col sm={6} md={8} lg={6}>
+        <Card
+          className="h-100"
+          bg={darkMode ? "dark" : "light"}
+          text={darkMode ? "white" : "dark"}
+        >
+          <Card.Header>
+            <Card.Title>{title}</Card.Title>
+          </Card.Header>
+          <Card.Body className="d-flex flex-column">
+            {people.map((person, index) => (
+              <div key={index} className="mb-2">
+                <Card.Title>{person.display_name || person.name}</Card.Title>
+                {person.title && (
+                  <Card.Subtitle className="mb-2 text-muted">
+                    {person.title}
+                  </Card.Subtitle>
+                )}
+                {person.role && <Card.Text>{person.role}</Card.Text>}
+                {person.emails &&
+                  person.emails.map((email, index) => (
+                    <Card.Link key={index} href={`mailto:${email}`}>
+                      {email}
+                    </Card.Link>
+                  ))}
+              </div>
+            ))}
+          </Card.Body>
+        </Card>
+      </Col>
+    </>
   );
 };
 
@@ -78,14 +78,13 @@ const PersonList = ({ title, people }) => {
   );
 };
 
-
-
 const HomePage = () => {
   const { darkMode } = useContext(ThemeContext);
   const { editorial_board, advisory_board, reviewers } = journal_data;
 
   return (
     <Container>
+      <News />
       <Tabs
         defaultActiveKey="aboutJournal"
         id="uncontrolled-tab-example"

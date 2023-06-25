@@ -1,4 +1,4 @@
-import {  useContext } from "react";
+import { useContext } from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -8,6 +8,7 @@ import logo from "../_content/logo.svg";
 import logo_dark from "../_content/logo_dark.svg";
 import { BsMoon, BsSun } from "react-icons/bs";
 import { ThemeContext } from "../ThemeContext";
+import { Link } from "react-router-dom"; // import Link from react-router-dom
 
 function Header() {
   const { darkMode, toggleDarkMode } = useContext(ThemeContext);
@@ -33,18 +34,18 @@ function Header() {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="http://www.kulturaihistoria.umcs.lublin.pl/en/">
+            <Link to="/" className="nav-link">
               Home
-            </Nav.Link>
-            <Nav.Link href="http://www.kulturaihistoria.umcs.lublin.pl/pl/kultura-i-histora-nr-42-2022-2">
+            </Link>
+            <Link to="/articles" className="nav-link">
               Latest Issue
-            </Nav.Link>
-            <Nav.Link href="http://www.kulturaihistoria.umcs.lublin.pl/pl/numery">
+            </Link>
+            <Link to="/archives" className="nav-link">
               Archives
-            </Nav.Link>
-            <Nav.Link href="http://www.kulturaihistoria.umcs.lublin.pl/pl/dla-autorow">
+            </Link>
+            <Link to="/author-guidelines" className="nav-link">
               For Authors
-            </Nav.Link>
+            </Link>
           </Nav>
           <Nav>
             <OverlayTrigger
@@ -53,7 +54,7 @@ function Header() {
               overlay={renderTooltip}
             >
               <Nav.Link onClick={toggleDarkMode}>
-                {darkMode ? <BsSun /> : <BsMoon />}
+                {!darkMode ? <BsSun /> : <BsMoon />}
               </Nav.Link>
             </OverlayTrigger>
           </Nav>

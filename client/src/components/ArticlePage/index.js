@@ -1,7 +1,13 @@
-import React from "react";
 
-const ArticlePage = () => {
-    return (<></>)
-};
+import React from 'react';
 
-export default ArticlePage;
+function ArchivesPage() {
+  return (
+    <div>
+      <h1>Articles</h1>
+      {/* Add your Archives page content here */}
+    </div>
+  );
+}
+
+export default ArchivesPage;
