@@ -1,30 +1,30 @@
 import React from "react";
 import { Tab, Tabs, Card, Container, Row, Col } from "react-bootstrap";
+import journal_data from "../../content/index";
+import aboutJournal from "../../content/about";
+
+const PersonCard = ({ title, people }) => (
+  <Col sm={6} md={4} lg={3}>
+    <Card>
+      <Card.Header>
+        <Card.Title>{title}</Card.Title>
+      </Card.Header>
+      <Card.Body>
+        {people.map((person, index) => (
+          <Card.Text key={index}>{person.name}</Card.Text>
+        ))}
+      </Card.Body>
+    </Card>
+  </Col>
+);
 
 const HomePage = () => {
-  const aboutJournal = [
-    {
-      title: "Aims and Scope",
-      content: "Kultura i Historia is an interdisciplinary journal...",
-    },
-    {
-      title: "Open Access Policy",
-      content: "Kultura i Historia provides free and open access...",
-    },
-    {
-      title: "Ethical Standards",
-      content: "The editorial staff of the journal follows the guidelines...",
-    },
-    {
-      title: "Data Privacy Policy / GDPR",
-      content: "Please note that all personal data...",
-    },
-  ];
+  const { editorial_board, advisory_board, reviewers } = journal_data;
 
   const people = [
-    { title: "Editorial Board", content: "" },
-    { title: "Advisory Board", content: "" },
-    { title: "Reviewers", content: "" },
+    { title: "Editorial Board", people: editorial_board },
+    { title: "Advisory Board", people: advisory_board },
+    { title: "Reviewers", people: reviewers },
   ];
 
   return (
@@ -43,7 +43,8 @@ const HomePage = () => {
               <Col sm={6} md={4} lg={3} key={index}>
                 <Card>
                   <Card.Header>
-                    <Card.Title>{info.title}</Card.Title></Card.Header>
+                    <Card.Title>{info.title}</Card.Title>
+                  </Card.Header>
                   <Card.Body>
                     <Card.Text>{info.content}</Card.Text>
                   </Card.Body>
@@ -55,14 +56,7 @@ const HomePage = () => {
         <Tab eventKey="people" title="People">
           <Row xs={1} md={2} className="g-4">
             {people.map((info, index) => (
-              <Col sm={6} md={4} lg={3} key={index}>
-                <Card>
-                  <Card.Header><Card.Title>{info.title}</Card.Title></Card.Header>
-                  <Card.Body>
-                    <Card.Text>{info.content}</Card.Text>
-                  </Card.Body>
-                </Card>
-              </Col>
+              <PersonCard key={index} {...info} />
             ))}
           </Row>
         </Tab>
